@@ -1,5 +1,5 @@
 <script>
-	import { linear } from 'svelte/easing';
+	import { quartOut } from 'svelte/easing';
 	import { products } from './products';
 	import shuffle from './shuffle';
 	import { onMount, tick } from 'svelte';
@@ -42,7 +42,7 @@
 		<div class="background">
 			{#if mounted}
 			{#each shuffledProducts as product, index (product)}
-			<a href="https://paradigma.media/" use:style  in:fadeAsync={{delay: Math.random()*3000, duration: 1000, easing: linear}} class="product">
+			<a href="https://paradigma.media/" use:style  in:fadeAsync={{delay: Math.random()*2500, duration: 2000, easing: quartOut}} class="product">
 				{product.name}
 			</a>
 			{/each}
